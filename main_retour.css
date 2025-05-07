@@ -59,7 +59,7 @@ body {
 .job p {
   margin: 0; /* Supprime les marges par défaut du paragraphe */
   font-family: 'inter-extralight', sans-serif; /* Utilise la police souhaitée */
-  color: rgba(255, 255, 255, 0.615); /* Couleur du texte */
+  color: rgba(250, 235, 254, 0.615); /* Couleur du texte */
   font-size: 2.5vw; /* Ajuste la taille du texte selon tes besoins */
 }
 
@@ -75,7 +75,7 @@ body {
   transform: translateY(-50%);
   width: 10px;
   height: 10px;
-  background-color: white;
+  background-color: #fde4fd;
   border-radius: 50%;
   animation: blink 2s infinite; /* Animation de clignotement */
   scale: 1.2;
@@ -89,7 +89,7 @@ body {
   left: 50%;
   width: 20px;
   height: 20px;
-  background-color: white;
+  background-color: #fde4fd;
   border-radius: 50%;
   opacity: 0.5;
   transform: translate(-50%, -50%) scale(0.5);
@@ -123,7 +123,7 @@ body {
 
 .typing-effect {
   font-family: 'Inter-extrabold', sans-serif;
-  background: linear-gradient(to bottom, #f1f1f1, #353535);
+  background: linear-gradient(20deg, #141120, #fde4fd); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
   font-size: 10vw;

@@ -20,16 +20,16 @@
     box-sizing: border-box;
   }
 
-body {
+  body {
     margin: 0;
     overflow: hidden;
-    background: url('img/background_blurv.jpg');
+    background: linear-gradient(30deg, #13131c, #150012);
     background-repeat: no-repeat;
-  background-size: cover; /* pour que l’image remplisse tout sans se répéter */
-  background-position: center;
-  height: 100vh;
-    background-color: #070707;
-  }
+    background-attachment: fixed; /* pour que le fond soit fixe */
+    background-size: cover; /* pour que le fond couvre tout l'écran */
+    background-position: center;
+    height: 100vh;
+}
   
   header {
     font-family: 'inter-extralight', sans-serif;

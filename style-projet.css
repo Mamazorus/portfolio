@@ -20,11 +20,60 @@
     box-sizing: border-box;
   }
 
-body {
+  body {
     margin: 0;
     overflow: hidden;
-    background-color: #070707;
-  }
+    background: linear-gradient(30deg, #1b1a1a, #060606);
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* pour que le fond soit fixe */
+    background-size: cover; /* pour que le fond couvre tout l'écran */
+    background-position: center;
+    height: 100vh;
+}
+
+.bg-graphisme {
+  margin: 0;
+    overflow: hidden;
+  background: linear-gradient(30deg, #11121c, #060606);
+  background-repeat: no-repeat;
+    background-attachment: fixed; /* pour que le fond soit fixe */
+    background-size: cover; /* pour que le fond couvre tout l'écran */
+    background-position: center;
+    height: 100vh;
+}
+
+.bg-urban {
+  margin: 0;
+    overflow: hidden;
+  background: linear-gradient(30deg, #1b111c, #060606);
+  background-repeat: no-repeat;
+    background-attachment: fixed; /* pour que le fond soit fixe */
+    background-size: cover; /* pour que le fond couvre tout l'écran */
+    background-position: center;
+    height: 100vh;
+}
+
+.bg-basteleur {
+  margin: 0;
+    overflow: hidden;
+  background: linear-gradient(30deg, #1c1111, #060606);
+  background-repeat: no-repeat;
+    background-attachment: fixed; /* pour que le fond soit fixe */
+    background-size: cover; /* pour que le fond couvre tout l'écran */
+    background-position: center;
+    height: 100vh;
+}
+
+.bg-masque {
+  margin: 0;
+    overflow: hidden;
+  background: linear-gradient(30deg, #181001, #060606);
+  background-repeat: no-repeat;
+    background-attachment: fixed; /* pour que le fond soit fixe */
+    background-size: cover; /* pour que le fond couvre tout l'écran */
+    background-position: center;
+    height: 100vh;
+}
 
   body::before {
     content: "";
