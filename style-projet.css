@@ -22,7 +22,6 @@
 
   body {
     margin: 0;
-    overflow: hidden;
     background: linear-gradient(30deg, #1b1a1a, #060606);
     background-repeat: no-repeat;
     background-attachment: fixed; /* pour que le fond soit fixe */
@@ -33,7 +32,6 @@
 
 .bg-graphisme {
   margin: 0;
-    overflow: hidden;
   background: linear-gradient(30deg, #11121c, #060606);
   background-repeat: no-repeat;
     background-attachment: fixed; /* pour que le fond soit fixe */
@@ -44,7 +42,6 @@
 
 .bg-urban {
   margin: 0;
-    overflow: hidden;
   background: linear-gradient(30deg, #1b111c, #060606);
   background-repeat: no-repeat;
     background-attachment: fixed; /* pour que le fond soit fixe */
@@ -55,7 +52,6 @@
 
 .bg-basteleur {
   margin: 0;
-    overflow: hidden;
   background: linear-gradient(30deg, #1c1111, #060606);
   background-repeat: no-repeat;
     background-attachment: fixed; /* pour que le fond soit fixe */
@@ -66,7 +62,6 @@
 
 .bg-masque {
   margin: 0;
-    overflow: hidden;
   background: linear-gradient(30deg, #181001, #060606);
   background-repeat: no-repeat;
     background-attachment: fixed; /* pour que le fond soit fixe */
