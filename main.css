@@ -1,0 +1,360 @@
+@font-face {
+  font-family: 'IntegralCF-Bold';
+  src: url('./fonts/IntegralCF-Bold.ttf') format('truetype'); /* Assurez-vous que le chemin est correct */
+}
+
+@font-face {
+  font-family: 'inter-light';
+  src: url('./fonts/Inter_18pt-Light.ttf') format('truetype'); /* Assurez-vous que le chemin est correct */
+}
+
+@font-face {
+  font-family: 'inter-extralight';
+  src: url('./fonts/Inter_18pt-ExtraLight.ttf') format('truetype'); /* Assurez-vous que le chemin est correct */
+}
+
+@font-face {
+font-family: 'inter-extrabold';
+src: url('./fonts/Inter_18pt-ExtraBold.ttf') format('truetype'); /* Assurez-vous que le chemin est correct */
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+main {
+  padding-top: 60px;
+}
+
+
+
+
+.hero {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 10vh;
+text-align: center;
+position: relative; 
+}
+
+.job {
+  
+position: relative;
+margin-top: 200px;
+}
+
+.job p {
+margin: 0; /* Supprime les marges par défaut du paragraphe */
+font-family: 'inter-extralight', sans-serif; /* Utilise la police souhaitée */
+color: rgba(255, 255, 255, 0.615); /* Couleur du texte */
+font-size: 2.5vw; /* Ajuste la taille du texte selon tes besoins */
+}
+
+
+
+
+
+
+.blinking-dot {
+position: absolute;
+left: -30px; /* Ajuste la position du cercle */
+top: 50%;
+transform: translateY(-50%);
+width: 10px;
+height: 10px;
+background-color: white;
+border-radius: 50%;
+animation: blink 2s infinite; /* Animation de clignotement */
+scale: 1.2;
+}
+
+/* Cercle animé derrière */
+.blinking-dot::before {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+width: 20px;
+height: 20px;
+background-color: white;
+border-radius: 50%;
+opacity: 0.5;
+transform: translate(-50%, -50%) scale(0.5);
+animation: pulse 2s infinite; /* Animation de pulsation */
+}
+
+/* Animation de pulsation */
+@keyframes pulse {
+0%, 100% {
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+}
+50% {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.2;
+}
+}
+
+
+
+
+.domaine {
+margin-top: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 40vh;
+text-align: center;
+overflow: hidden;
+}
+
+.typing-effect {
+font-family: 'Inter-extrabold', sans-serif;
+background: linear-gradient(to bottom, #f1f1f1, #353535);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent; 
+font-size: 8vw;
+border-right: 2px solid; /* Curseur de la machine à écrire */
+white-space: nowrap;
+overflow: hidden;
+color: white;
+}
+
+/* Animation de clignotement du curseur */
+@keyframes blink-caret {
+from, to {
+  border-color: transparent;
+}
+50% {
+  border-color: white;
+}
+}
+
+.typing-effect {
+animation: blink-caret 0.75s step-end infinite;
+}
+
+
+.big-title{
+position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 9vw;
+font-family: 'Inter-extrabold', sans-serif;
+color: white;
+background-color: black;
+height: 100vh;
+width: 100vw;
+z-index: 10000000;
+opacity: 1;
+}
+
+.animated-title span {
+opacity: 0;
+animation: typing 0.3s forwards;
+}
+
+
+@keyframes typing {
+0% {
+  opacity: 0;
+}
+
+100% {
+  opacity: 1;
+}
+}
+
+.animated-title span:nth-child(1) {
+animation-delay: 0.1s;
+}
+
+.animated-title span:nth-child(2) {
+animation-delay: 0.4s;
+}
+
+.animated-title span:nth-child(3) {
+animation-delay: 0.7s;
+}
+
+.animated-title span:nth-child(4) {
+animation-delay: 1s;
+}
+
+.animated-title span:nth-child(5) {
+animation-delay: 1.3s;
+}
+.animated-title span:nth-child(6) {
+animation-delay: 1.6s;
+}
+.animated-title span:nth-child(7) {
+animation-delay: 1.9s;
+}
+
+
+
+
+
+@media (max-width: 850px){
+  .typing-effect {
+    font-size: 11vw;
+}
+
+.job p {
+  font-size: 4vw;
+}
+}
+
+
+
+
+@keyframes slideInFromLeft {
+from {
+  opacity: 0.7;
+  transform: translateX(-400%);
+}
+to {
+  opacity: 1;
+  transform: translateX(0);
+}
+}
+
+@keyframes slideInFromRight {
+from {
+  opacity: 0.7;
+  transform: translateX(400%);
+}
+to {
+  opacity: 1;
+  transform: translateX(0);
+}
+}
+
+@keyframes slideInFromTop {
+from {
+  opacity: 0;
+  transform: translateY(-400%);
+}
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+
+@keyframes slideInFromBottom {
+from {
+  opacity: 0;
+  transform: translateY(100vh);
+}
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+
+@keyframes slideInFromBottom2 {
+from {
+  transform: translateY(100vh);
+}
+to {
+  transform: translateY(0);
+}
+}
+
+@keyframes typewriter {
+from {
+  width: 0;
+}
+to {
+  width: 100%;
+}
+}
+
+@keyframes fadeIn {
+from {
+  opacity: 0;
+}
+to {
+  opacity: 1;
+}
+}
+@keyframes fadeOut {
+from {
+  opacity: 1;
+}
+to {
+  opacity: 0;
+}
+}
+
+@keyframes slideToTop {
+from {
+  top: 0;
+  opacity: 1;
+}
+to {
+  top: -100vh;
+  opacity: 1;
+}
+}
+
+@keyframes rotation90toRight {
+from {
+  rotate: 90%;
+}
+to {
+  rotate: -90%;
+}
+}
+
+
+/* animations */
+
+.start-anim {
+position: absolute;
+animation: slideToTop 1s ease-in-out 2.5s forwards;
+}
+
+.nav-left {
+opacity: 0;
+animation: fadeIn 2.5s ease-out 4s forwards;
+animation: slideInFromLeft 2.5s ease-in-out 3s forwards;
+}
+
+.nav-right {
+opacity: 0;
+animation: fadeIn 2.5s ease-out 4s forwards;
+animation: slideInFromRight 2.5s ease-in-out 3s forwards;
+}
+
+.job-anim {
+opacity: 0;
+animation: fadeIn 2s ease-out 4s forwards;
+animation: slideInFromTop 2.5s ease-in-out 3s forwards;
+}
+
+.domaine-anim {  
+opacity: 0;
+animation: slideInFromBottom 2.5s ease-in-out 1.8s forwards;
+}
+
+.projects {
+opacity: 0;
+animation: fadeIn 2s ease-out 5s forwards;
+animation: slideInFromBottom 2.5s ease-in-out 3s forwards;
+}
+
+.projects-right {
+opacity: 0;
+animation: fadeIn 2s ease-out 5s forwards;
+animation: slideInFromBottom 2.5s ease-in-out 3s forwards;
+}
+
+.reste-fade{
+opacity: 0;
+animation: fadeIn 2s ease-out 5s forwards;
+}
