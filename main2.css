@@ -37,7 +37,7 @@ body {
     color: #ffffff;
     display: flex;
     max-width: 100%;
-    padding: 0px 40px;
+    padding: 0px 20px;
     gap: 40px;
   }
 
@@ -267,7 +267,7 @@ h3 {
     .scroll-right img {
       width: 100%; /* Les images prennent 80% de la largeur */
       height: auto;
-      border-radius: 15px; /* Bord arrondi plus léger */
+      border-radius: 0px; /* Bord arrondi plus léger */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       margin-left: auto; /* Assure que l'image est centrée */
       margin-right: auto; /* Assure que l'image est centrée */
