@@ -82,7 +82,7 @@
   }
   
   .navbar {
-    mix-blend-mode: difference;
+    background: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0));
     padding-top: 10px;
     position: fixed;
     left: 0;
@@ -90,8 +90,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;
+    z-index: 1000000;
+        mix-blend-mode: difference;
   }
+
+  .nav-right a {      
+    mix-blend-mode: difference;
+  }
+
+
   
   .nav-left, .nav-right {
     display: flex;
