@@ -27,7 +27,7 @@ const backgroundColors = {
 };
 
 // Couleur de fond par défaut
-const defaultBackground = 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #000000 100%)';
+const defaultBackground = 'linear-gradient(30deg,rgb(43, 43, 43) 0%, #1a1a1a 50%, #1a1a1a 100%)';
 
 // Variables pour les éléments de fond
 let backgroundLayer1 = null;
