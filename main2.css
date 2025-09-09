@@ -117,7 +117,7 @@ h3 {
     width: 50vw;
     max-width: 100%;
     height: auto;
-    border-radius: 20px;
+    border-radius: 0px;
     align-self: flex-end; /* pour les pousser à droite si flex */
   }
   
