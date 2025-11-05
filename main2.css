@@ -1,315 +1,379 @@
 @font-face {
-    font-family: 'IntegralCF-Bold';
-    src: url('./fonts/IntegralCF-Bold.ttf') format('truetype'); /* Assurez-vous que le chemin est correct */
+  font-family: 'IntegralCF-Bold';
+  src: url('./fonts/IntegralCF-Bold.ttf') format('truetype');
+  /* Assurez-vous que le chemin est correct */
 }
 
 @font-face {
-    font-family: 'inter-light';
-    src: url('./fonts/Inter_18pt-Light.ttf') format('truetype'); /* Assurez-vous que le chemin est correct */
+  font-family: 'inter-light';
+  src: url('./fonts/Inter_18pt-Light.ttf') format('truetype');
+  /* Assurez-vous que le chemin est correct */
 }
 
 @font-face {
-    font-family: 'inter-extralight';
-    src: url('./fonts/Inter_18pt-ExtraLight.ttf') format('truetype'); /* Assurez-vous que le chemin est correct */
+  font-family: 'inter-extralight';
+  src: url('./fonts/Inter_18pt-ExtraLight.ttf') format('truetype');
+  /* Assurez-vous que le chemin est correct */
 }
 
 @font-face {
   font-family: 'inter-extrabold';
-  src: url('./fonts/Inter_18pt-ExtraBold.ttf') format('truetype'); /* Assurez-vous que le chemin est correct */
+  src: url('./fonts/Inter_18pt-ExtraBold.ttf') format('truetype');
+  /* Assurez-vous que le chemin est correct */
 }
 
 @font-face {
   font-family: 'DMserifText-Regular';
-  src: url('./fonts/DMSerifText-Regular.ttf') format('truetype'); /* Assurez-vous que le chemin est correct */
+  src: url('./fonts/DMSerifText-Regular.ttf') format('truetype');
+  /* Assurez-vous que le chemin est correct */
 }
 
 @font-face {
   font-family: 'DMserifText-Italic';
-  src: url('./fonts/DMSerifText-Italic.ttf') format('truetype'); /* Assurez-vous que le chemin est correct */
+  src: url('./fonts/DMSerifText-Italic.ttf') format('truetype');
+  /* Assurez-vous que le chemin est correct */
 }
 
 
 body {
-    margin: 0;
-  }
-  
-  .sticky-layout {
-    color: #ffffff;
-    display: flex;
-    max-width: 100%;
-    padding: 0px 20px;
-    gap: 40px;
-  }
+  margin: 0;
+}
 
-  .sticky-layout h2 {
-    padding-top: 90px;
-    font-size: 30px;
-    font-family: 'inter-Light', sans-serif;
-  }
+.sticky-layout {
+  color: #ffffff;
+  display: flex;
+  max-width: 100%;
+  padding: 0px 40px;
+  gap: 40px;
+}
 
-  .sticky-layout p {
-    margin-top: 20px;
-    font-size: 20px;
-    font-family: 'inter-Extralight', sans-serif;
-    color: #a3a1a1;
-  }
-  
-  .sticky-left {
-    flex: 1;
-    position: sticky;
-    top: 0;
-    align-self: flex-start;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    height: 95vh;
-  }
-  
-  .bottom-sticky {
-    margin-top: auto; /* Cela va pousser la partie bottom-sticky en bas de son parent */
-    color: white;
+.sticky-layout h2 {
+  padding-top: 90px;
+  font-size: 30px;
+  font-family: 'inter-Light', sans-serif;
+}
+
+.sticky-layout p {
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: 'inter-Extralight', sans-serif;
+  color: #a3a1a1;
+}
+
+.sticky-left {
+  flex: 1;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+}
+
+.bottom-sticky {
+  margin-top: auto;
+  /* Cela va pousser la partie bottom-sticky en bas de son parent */
+  color: white;
 
 
 }
 
 h3 {
   margin-top: 40px;
-    font-family: 'inter-extralight', sans-serif;
-    font-size: 16px;
-    color: #ffffff;
+  font-family: 'inter-extralight', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
 }
 
 .bottom-sticky p {
   font-family: 'inter-light', sans-serif;
   margin-top: 10px;
-    font-size: 16px;
-    color: #ffffff;
-    margin-right: 10vw;
-    text-decoration: none;
-    border: 1px solid #5c5c5c;
-    padding: 10px;
-    text-underline-offset: 2px; 
+  font-size: 16px;
+  color: #ffffff;
+  margin-right: 10vw;
+  text-decoration: none;
+  border: 1px solid #5c5c5c;
+  padding: 10px;
+  text-underline-offset: 2px;
 
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1200px) {
   .bottom-sticky p {
     margin-right: 20px;
+  }
 }
-}
-    
 
+
+.scroll-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+
+
+.first-img {
+  margin-top: 90px
+}
+
+.scroll-right img {
+  width: 50vw;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0px;
+  align-self: flex-end;
+  /* pour les pousser à droite si flex */
+}
+
+
+
+.tag {
+  display: flex;
+  /* Ajout de flex pour gérer la disposition */
+  flex-wrap: wrap;
+  /* Permet de faire passer les éléments à la ligne */
+  margin-top: 20px;
+  /* Espace au-dessus de .tag */
+  gap: 0px;
+  /* Espacement entre les éléments sur l'axe horizontal et vertical */
+}
+
+.tag a {
+  border: 1px solid #5c5c5c;
+  padding: 10px 10px;
+  border-radius: 200px;
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  font-family: 'inter-Light', sans-serif;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  /* Pour que chaque lien se comporte comme un bloc, avec espacement */
+  cursor: default;
+}
+
+.tag a:hover {
+  background-color: white;
+  color: #070707;
+  padding: 10px 20px;
+  box-shadow: 1px 2px 10px rgba(255, 255, 255, 0.2);
+}
+
+
+.first-tag {
+  margin-right: 20px;
+}
+
+
+.tag-bottom2 {
+  display: flex;
+  /* Ajout de flex pour gérer la disposition */
+  flex-wrap: wrap;
+  /* Permet de faire passer les éléments à la ligne */
+  margin-top: 20px;
+  /* Espace au-dessus de .tag */
+  gap: 0px;
+  /* Espacement entre les éléments sur l'axe horizontal et vertical */
+}
+
+.tag-bottom2 a {
+  border: 1px solid #5c5c5c;
+  padding: 10px 15px;
+  border-radius: 200px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #070707;
+  background-color: white;
+
+  font-family: 'inter-Light', sans-serif;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  /* Pour que chaque lien se comporte comme un bloc, avec espacement */
+}
+
+.tag-bottom2 a:hover {
+  background-color: transparent;
+  color: #ffffff;
+  padding: 10px 20px;
+  box-shadow: 1px 2px 10px #1d1d1d00;
+}
+
+.tag-bottom2 p {
+  border: none;
+}
+
+
+.tag-bottom {
+  display: flex;
+  /* Ajout de flex pour gérer la disposition */
+  flex-wrap: wrap;
+  /* Permet de faire passer les éléments à la ligne */
+  margin-top: 0px;
+  /* Espace au-dessus de .tag */
+  gap: 0px;
+  /* Espacement entre les éléments sur l'axe horizontal et vertical */
+}
+
+.tag-bottom a {
+  border: 1px solid #5c5c5c;
+  padding: 10px 15px;
+  border-radius: 200px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #070707;
+  background-color: white;
+
+  font-family: 'inter-Light', sans-serif;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  /* Pour que chaque lien se comporte comme un bloc, avec espacement */
+}
+
+.tag-bottom a:hover {
+  background-color: #070707;
+  color: #ffffff;
+  padding: 10px 20px;
+  box-shadow: 1px 2px 10px #070707;
+}
+
+.tag-bottom p {
+  border: none;
+}
+
+.propos-projet p {
+
+  font-size: 16px;
+  line-height: 1.2;
+  word-spacing: 1px;
+  letter-spacing: 1.2px;
+}
+
+
+@media (max-width: 850px) {
+
+  /* Suppression du sticky pour la version mobile */
+  .sticky-left {
+    position: static;
+    /* Désactive le sticky */
+    height: auto;
+    /* Laisse la taille naturelle du contenu */
+    margin-left: -40px;
+  }
+
+  /* Paragraphe en haut de la partie sticky */
+  .sticky-layout {
+    flex-direction: column;
+    /* Met la partie gauche et droite en colonne */
+  }
+
+  .sticky-layout {
+  color: #ffffff;
+  display: flex;
+  max-width: 100%;
+  padding: 0px 20px;
+  gap: 20px;
+}
+
+  .sticky-layout h2 {
+    padding: 0 40px;
+    /* Moins de padding sur les côtés */
+    font-size: 26px;
+    /* Taille du titre plus petite */
+    padding-top: 80px;
+    /* Moins d'espace au début */
+  }
+
+  .sticky-layout p {
+    margin-top: 20px;
+    /* Un peu d'espace avant le texte */
+    padding: 0 40px;
+    /* Moins de padding sur les côtés */
+  }
+
+  /* Mise en colonne des images */
   .scroll-right {
-    width: 50%;
+
+    width: 100%;
+    /* Prend toute la largeur */
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
-  }
-  
-
-
-  .first-img{
-    margin-top: 90px
+    /* Aligne les images en colonne */
+    align-items: center;
+    /* Centre les images horizontalement */
+    gap: 20px;
+    /* Plus d'espace entre les images */
   }
 
   .scroll-right img {
-    width: 50vw;
-    max-width: 100%;
+    width: 100%;
+    /* Les images prennent 80% de la largeur */
     height: auto;
     border-radius: 0px;
-    align-self: flex-end; /* pour les pousser à droite si flex */
+    /* Bord arrondi plus léger */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: auto;
+    /* Assure que l'image est centrée */
+    margin-right: auto;
+    /* Assure que l'image est centrée */
   }
-  
-  
 
+  /* Les tags deviennent plus petits et s'affichent en colonne */
   .tag {
-    display: flex;           /* Ajout de flex pour gérer la disposition */
-    flex-wrap: wrap;         /* Permet de faire passer les éléments à la ligne */
-    margin-top: 20px;        /* Espace au-dessus de .tag */
-    gap: 0px;               /* Espacement entre les éléments sur l'axe horizontal et vertical */
+    padding: 0 40px;
+    /* Moins de padding sur les côtés */
+    display: flex;
+    flex-direction: row;
+    /* Aligne les éléments en ligne */
+    justify-content: left;
+    /* Centre les boutons horizontalement */
+    gap: 10px;
+    /* Espacement entre les boutons */
+    margin-top: 40px;
   }
-  
+
   .tag a {
-    border: 1px solid #5c5c5c;
-    padding: 10px 10px;
-    border-radius: 200px;
-    font-size: 16px;
-    text-decoration: none;
-    color: white;
-    font-family: 'inter-Light', sans-serif;
-    transition: all 0.3s ease-in-out;
-    display: inline-block;   /* Pour que chaque lien se comporte comme un bloc, avec espacement */
-    cursor: default;
-  }
-  
-  .tag a:hover {
-    background-color: white;
-    color: #070707;
-    padding: 10px 20px;
-    box-shadow: 1px 2px 10px rgba(255, 255, 255, 0.2);
-  }
-  
-
-  .first-tag{
-    margin-right: 20px;
+    font-size: 18px;
+    /* Taille des boutons réduite */
+    border-radius: 30px;
+    /* Bord plus arrondi */
   }
 
-
-  .tag-bottom2 {
-    display: flex;           /* Ajout de flex pour gérer la disposition */
-    flex-wrap: wrap;         /* Permet de faire passer les éléments à la ligne */
-    margin-top: 20px;        /* Espace au-dessus de .tag */
-    gap: 0px;               /* Espacement entre les éléments sur l'axe horizontal et vertical */
-  }
-  
-  .tag-bottom2 a {
-    border: 1px solid #5c5c5c;
-    padding: 10px 15px;
-    border-radius: 200px;
-    font-size: 16px;
-    text-decoration: none;
-    color: #070707;
-    background-color: white;
-
-    font-family: 'inter-Light', sans-serif;
-    transition: all 0.3s ease-in-out;
-    display: inline-block;   /* Pour que chaque lien se comporte comme un bloc, avec espacement */
-  }
-  
-  .tag-bottom2 a:hover {
-    background-color: transparent;
-    color: #ffffff;
-    padding: 10px 20px;
-    box-shadow: 1px 2px 10px #1d1d1d00;
-  }
-
-  .tag-bottom2 p {
-    border: none;
-  }
-
-
-  .tag-bottom {
-    display: flex;           /* Ajout de flex pour gérer la disposition */
-    flex-wrap: wrap;         /* Permet de faire passer les éléments à la ligne */
-    margin-top: 0px;        /* Espace au-dessus de .tag */
-    gap: 0px;               /* Espacement entre les éléments sur l'axe horizontal et vertical */
-  }
-  
-  .tag-bottom a {
-    border: 1px solid #5c5c5c;
-    padding: 10px 15px;
-    border-radius: 200px;
-    font-size: 16px;
-    text-decoration: none;
-    color: #070707;
-    background-color: white;
-
-    font-family: 'inter-Light', sans-serif;
-    transition: all 0.3s ease-in-out;
-    display: inline-block;   /* Pour que chaque lien se comporte comme un bloc, avec espacement */
-  }
-  
-  .tag-bottom a:hover {
-    background-color: #070707;
-    color: #ffffff;
-    padding: 10px 20px;
-    box-shadow: 1px 2px 10px #070707;
-  }
-
-  .tag-bottom p {
-    border: none;
-  }
-
-  .propos-projet p {
-
-    font-size: 16px;
-    line-height: 1.2;
-    word-spacing: 1px;      
-  letter-spacing: 1.2px; 
-  }
-  
-
-  @media (max-width: 850px) {
-    /* Suppression du sticky pour la version mobile */
-    .sticky-left {
-      position: static; /* Désactive le sticky */
-      height: auto; /* Laisse la taille naturelle du contenu */
-      margin-left: -40px;
-    }
-  
-    /* Paragraphe en haut de la partie sticky */
-    .sticky-layout {
-      flex-direction: column; /* Met la partie gauche et droite en colonne */
-    }
-  
-    .sticky-layout h2 {
-      padding: 0 40px; /* Moins de padding sur les côtés */
-      font-size: 26px; /* Taille du titre plus petite */
-      padding-top: 80px; /* Moins d'espace au début */
-    }
-  
-    .sticky-layout p {
-      margin-top: 20px; /* Un peu d'espace avant le texte */
-      padding: 0 40px; /* Moins de padding sur les côtés */
-    }
-  
-    /* Mise en colonne des images */
-    .scroll-right {
-      
-      width: 100%; /* Prend toute la largeur */
-      display: flex;
-      flex-direction: column; /* Aligne les images en colonne */
-      align-items: center; /* Centre les images horizontalement */
-      gap: 20px; /* Plus d'espace entre les images */
-    }
-  
-    .scroll-right img {
-      width: 100%; /* Les images prennent 80% de la largeur */
-      height: auto;
-      border-radius: 0px; /* Bord arrondi plus léger */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      margin-left: auto; /* Assure que l'image est centrée */
-      margin-right: auto; /* Assure que l'image est centrée */
-    }
-  
-    /* Les tags deviennent plus petits et s'affichent en colonne */
-    .tag {
-      padding: 0 40px; /* Moins de padding sur les côtés */
-      display: flex;
-      flex-direction: row; /* Aligne les éléments en ligne */
-      justify-content: left; /* Centre les boutons horizontalement */
-      gap: 10px; /* Espacement entre les boutons */
-      margin-top: 40px;
-    }
-  
-    .tag a {
-      font-size: 18px; /* Taille des boutons réduite */
-      border-radius: 30px; /* Bord plus arrondi */
-  }
-
-  h3{
-    padding: 0 40px; /* Moins de padding sur les côtés */
+  h3 {
+    padding: 0 40px;
+    /* Moins de padding sur les côtés */
   }
 
   .bottom-sticky {
-    margin-top: 40px; /* Cela va pousser la partie bottom-sticky en bas de son parent */  
-}
-.tag-bottom {
-  display: flex;           /* Ajout de flex pour gérer la disposition */
-  flex-wrap: wrap;         /* Permet de faire passer les éléments à la ligne */
-  margin-top: 0px;        /* Espace au-dessus de .tag */
-  gap: 0px;               /* Espacement entre les éléments sur l'axe horizontal et vertical */
-}
+    margin-top: 40px;
+    /* Cela va pousser la partie bottom-sticky en bas de son parent */
+  }
 
-.tag-bottom2 {
-  display: flex;           /* Ajout de flex pour gérer la disposition */
-  flex-wrap: wrap;         /* Permet de faire passer les éléments à la ligne */
-  margin-top: 20px;
-  margin-left: 40px;        /* Espace au-dessus de .tag */
-  gap: 0px;               /* Espacement entre les éléments sur l'axe horizontal et vertical */
-}
+  .tag-bottom {
+    display: flex;
+    /* Ajout de flex pour gérer la disposition */
+    flex-wrap: wrap;
+    /* Permet de faire passer les éléments à la ligne */
+    margin-top: 0px;
+    /* Espace au-dessus de .tag */
+    gap: 0px;
+    /* Espacement entre les éléments sur l'axe horizontal et vertical */
+  }
+
+  .tag-bottom2 {
+    display: flex;
+    /* Ajout de flex pour gérer la disposition */
+    flex-wrap: wrap;
+    /* Permet de faire passer les éléments à la ligne */
+    margin-top: 20px;
+    margin-left: 40px;
+    /* Espace au-dessus de .tag */
+    gap: 0px;
+    /* Espacement entre les éléments sur l'axe horizontal et vertical */
+  }
 
 
 }
-  
