@@ -397,6 +397,25 @@ body.no-scroll {
   }
 }
 
+
+@media (max-width: 642px) {
+  .name {
+    display: none;
+  }
+    .nav-left {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-right {
+    margin-right: 10px;
+    margin-left: auto;
+  }
+}
+
+
+
 @media (max-width: 480px) {
   .container {
     padding: 0px 0px;

@@ -250,4 +250,11 @@
     .div4 {
         height: 50vh;
     }
+
+    .projet {
+        margin-top: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+
+    }
 }

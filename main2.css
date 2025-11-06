@@ -377,3 +377,129 @@ h3 {
 
 
 }
+
+
+@media (max-width: 642px) {
+
+  /* Suppression du sticky pour la version mobile */
+  .sticky-left {
+    position: static;
+    /* Désactive le sticky */
+    height: auto;
+    /* Laisse la taille naturelle du contenu */
+    margin-left: -40px;
+  }
+
+  /* Paragraphe en haut de la partie sticky */
+  .sticky-layout {
+    flex-direction: column;
+    /* Met la partie gauche et droite en colonne */
+  }
+
+  .sticky-layout {
+  color: #ffffff;
+  display: flex;
+  max-width: 100%;
+  padding: 0px 10px;
+  gap: 20px;
+}
+
+  .sticky-layout h2 {
+    padding: 0 40px;
+    /* Moins de padding sur les côtés */
+    font-size: 26px;
+    /* Taille du titre plus petite */
+    padding-top: 80px;
+    /* Moins d'espace au début */
+  }
+
+  .sticky-layout p {
+    margin-top: 20px;
+    /* Un peu d'espace avant le texte */
+    padding: 0 40px;
+    /* Moins de padding sur les côtés */
+  }
+
+  /* Mise en colonne des images */
+  .scroll-right {
+
+    width: 100%;
+    /* Prend toute la largeur */
+    display: flex;
+    flex-direction: column;
+    /* Aligne les images en colonne */
+    align-items: center;
+    /* Centre les images horizontalement */
+    gap: 10px;
+    /* Plus d'espace entre les images */
+  }
+
+  .scroll-right img {
+    width: 100%;
+    /* Les images prennent 80% de la largeur */
+    height: auto;
+    border-radius: 0px;
+    /* Bord arrondi plus léger */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: auto;
+    /* Assure que l'image est centrée */
+    margin-right: auto;
+    /* Assure que l'image est centrée */
+  }
+
+  /* Les tags deviennent plus petits et s'affichent en colonne */
+  .tag {
+    padding: 0 40px;
+    /* Moins de padding sur les côtés */
+    display: flex;
+    flex-direction: row;
+    /* Aligne les éléments en ligne */
+    justify-content: left;
+    /* Centre les boutons horizontalement */
+    gap: 10px;
+    /* Espacement entre les boutons */
+    margin-top: 40px;
+  }
+
+  .tag a {
+    font-size: 18px;
+    /* Taille des boutons réduite */
+    border-radius: 30px;
+    /* Bord plus arrondi */
+  }
+
+  h3 {
+    padding: 0 40px;
+    /* Moins de padding sur les côtés */
+  }
+
+  .bottom-sticky {
+    margin-top: 40px;
+    /* Cela va pousser la partie bottom-sticky en bas de son parent */
+  }
+
+  .tag-bottom {
+    display: flex;
+    /* Ajout de flex pour gérer la disposition */
+    flex-wrap: wrap;
+    /* Permet de faire passer les éléments à la ligne */
+    margin-top: 0px;
+    /* Espace au-dessus de .tag */
+    gap: 0px;
+    /* Espacement entre les éléments sur l'axe horizontal et vertical */
+  }
+
+  .tag-bottom2 {
+    display: flex;
+    /* Ajout de flex pour gérer la disposition */
+    flex-wrap: wrap;
+    /* Permet de faire passer les éléments à la ligne */
+    margin-top: 20px;
+    margin-left: 40px;
+    /* Espace au-dessus de .tag */
+    gap: 0px;
+    /* Espacement entre les éléments sur l'axe horizontal et vertical */
+  }
+
+
+}

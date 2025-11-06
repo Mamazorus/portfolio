@@ -237,6 +237,23 @@ header {
   }
 }
 
+@media (max-width: 642px) {
+  .name {
+    display: none;
+  }
+    .nav-left {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-right {
+    margin-right: 10px;
+    margin-left: auto;
+  }
+}
+
+
 
 body.no-scroll {
   overflow: hidden;
