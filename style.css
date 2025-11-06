@@ -221,9 +221,19 @@ header {
   }
   */
 
-@media (max-width: 768px) {
+@media (max-width: 911px) {
   .name {
     display: none;
+  }
+    .nav-left {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-right {
+    margin-right: 20px;
+    margin-left: auto;
   }
 }
 
