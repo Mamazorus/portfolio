@@ -121,12 +121,40 @@ h3 {
 }
 
 .scroll-right img {
+  /* par défaut (déjà adapté pour tablettes / petites résolutions)
+     on garde une largeur contrôlée qui sera surchargée en desktop */
   width: 50vw;
   max-width: 100%;
   height: auto;
   border-radius: 0px;
   align-self: flex-end;
-  /* pour les pousser à droite si flex */
+}
+
+/* Desktop : donner plus de place aux images (70vw) et laisser le texte sur 30vw */
+@media (min-width: 1200px) {
+  /* Augmente l'espacement entre la colonne de texte et la colonne d'images */
+  .sticky-layout {
+    gap: 100px;
+  }
+  .sticky-left {
+    /* forcer la colonne de texte à occuper environ 30vw */
+    flex: 0 0 35vw;
+    max-width: 35vw;
+  }
+
+  .scroll-right {
+    width: 70vw;
+    /* s'assurer que les images remplissent correctement leur conteneur */
+    align-items: flex-end;
+    gap: 20px;
+  }
+
+  .scroll-right img {
+    /* chaque image prendra toute la largeur du conteneur (70vw) */
+    width: 100%;
+    max-width: none;
+    align-self: flex-end;
+  }
 }
 
 
@@ -262,6 +290,8 @@ h3 {
     height: auto;
     /* Laisse la taille naturelle du contenu */
     margin-left: -40px;
+    /* Espace intérieur spécifique pour la zone texte sur mobile */
+    padding: 0 20px;
   }
 
   /* Paragraphe en haut de la partie sticky */
@@ -431,6 +461,9 @@ h3 {
     align-items: center;
     /* Centre les images horizontalement */
     gap: 10px;
+    /* Espace intérieur pour les images (conserve 10px comme demandé) */
+    padding: 0 10px;
+    box-sizing: border-box;
     /* Plus d'espace entre les images */
   }
 

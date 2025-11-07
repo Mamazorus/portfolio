@@ -33,6 +33,8 @@ const defaultBackground = 'linear-gradient(135deg, #1a1a1a 0%, #060606 50%, #060
 let backgroundLayer1 = null;
 let backgroundLayer2 = null;
 let currentLayer = 1;
+let lastActiveFile = null; // pour éviter les changements répétés sur la même image
+let grainLayer = null;
 
 // Fonction pour créer les couches de fond pour les transitions
 function createBackgroundLayers() {
@@ -48,7 +50,7 @@ function createBackgroundLayers() {
         width: 100vw;
         height: 100vh;
         background: ${defaultBackground};
-        z-index: -2;
+    z-index: -3;
         transition: opacity 1.2s ease-in-out;
         opacity: 1;
     `;
@@ -62,7 +64,7 @@ function createBackgroundLayers() {
         width: 100vw;
         height: 100vh;
         background: ${defaultBackground};
-        z-index: -1;
+    z-index: -2;
         transition: opacity 1.2s ease-in-out;
         opacity: 0;
     `;
@@ -70,6 +72,58 @@ function createBackgroundLayers() {
   // Ajouter les couches au body
   document.body.insertBefore(backgroundLayer1, document.body.firstChild);
   document.body.insertBefore(backgroundLayer2, document.body.firstChild);
+
+  // Créer une couche de grain (noise) au-dessus des couches de fond mais
+  // sous le contenu (z-index: -1). On génère un petit tile canvas et on l'utilise
+  // en background-repeat pour un effet subtil et performant.
+  createGrainLayer();
+}
+
+// Génère un petit tile bruité en canvas, le convertit en dataURL et crée
+// une couche fixe répétée pour simuler du grain.
+function createGrainLayer() {
+  try {
+    const size = 200; // taille du tile
+    const canvas = document.createElement('canvas');
+    canvas.width = size;
+    canvas.height = size;
+    const ctx = canvas.getContext('2d');
+
+    const imageData = ctx.createImageData(size, size);
+    // Remplir le tile avec du bruit monochrome
+    for (let i = 0; i < imageData.data.length; i += 4) {
+      const v = Math.floor(Math.random() * 255);
+      imageData.data[i] = v;
+      imageData.data[i + 1] = v;
+      imageData.data[i + 2] = v;
+      // alpha bas pour un grain subtil
+      imageData.data[i + 3] = Math.floor(Math.random() * 60);
+    }
+    ctx.putImageData(imageData, 0, 0);
+
+    const dataUrl = canvas.toDataURL('image/png');
+
+    grainLayer = document.createElement('div');
+    grainLayer.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      background-image: url("${dataUrl}");
+      background-repeat: repeat;
+      opacity: 0.06; /* ajuster l'intensité du grain */
+      mix-blend-mode: overlay;
+      z-index: -1;
+    `;
+
+    // Insérer la couche de grain au-dessus des backgrounds
+    document.body.insertBefore(grainLayer, document.body.firstChild);
+  } catch (e) {
+    // Si quelque chose casse (ex: contexte canvas non dispo), on ignore le grain
+    console.warn('Impossible de créer la couche de grain :', e);
+  }
 }
 
 // Fonction pour extraire le nom du fichier de l'URL de l'image
@@ -117,24 +171,33 @@ function setupBackgroundChanger() {
 
   // Options pour l'observer - ADAPTATIF selon la taille d'écran
   const screenWidth = window.innerWidth;
-  const threshold = screenWidth >= 1945 ? 0.5 : 0.7; // 50% pour grands écrans, 70% pour petits
-  
+  // On utilise un tableau de thresholds pour récupérer l'intersectionRatio précisément,
+  // puis on compare entry.intersectionRatio à un ratio requis qui varie selon l'écran.
+  const requiredRatio = screenWidth >= 1200 ? 0.35 : 0.7; // desktop -> moins strict (images larges), mobile -> plus strict
+
   const options = {
     root: null,
     rootMargin: '-10% 0px -10% 0px',
-    threshold: threshold
+    threshold: [0, 0.1, 0.25, 0.5, 0.75, 1]
   };
-  
-  console.log(`Écran détecté: ${screenWidth}px - Threshold utilisé: ${threshold * 100}%`);
+
+  console.log(`Écran détecté: ${screenWidth}px - Required intersection ratio: ${Math.round(requiredRatio * 100)}%`);
 
   // Créer l'observer
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        const fileName = getImageFileName(img.src);
-        const colorConfig = backgroundColors[fileName];
+      const img = entry.target;
+      const fileName = getImageFileName(img.src);
+      const intersectionRatio = entry.intersectionRatio;
 
+      // Si la portion visible dépasse le seuil requis et que ce n'est pas
+      // la même image déjà active, on change le fond.
+      if (intersectionRatio >= requiredRatio) {
+        if (lastActiveFile === fileName) return; // évite les relances inutiles
+
+        lastActiveFile = fileName;
+
+        const colorConfig = backgroundColors[fileName];
         if (colorConfig) {
           changeBackground(colorConfig.gradient, colorConfig.name);
         } else {
