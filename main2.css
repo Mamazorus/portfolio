@@ -462,7 +462,7 @@ h3 {
     /* Centre les images horizontalement */
     gap: 10px;
     /* Espace intérieur pour les images (conserve 10px comme demandé) */
-    padding: 0 10px;
+    padding: 0 0px;
     box-sizing: border-box;
     /* Plus d'espace entre les images */
   }
