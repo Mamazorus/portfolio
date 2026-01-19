@@ -1,0 +1,173 @@
+/* ============================================
+   ANIMATIONS CSS - Toutes les animations
+   ============================================ */
+
+/* ==================== KEYFRAMES ==================== */
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes typing {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0.7;
+    transform: translateX(-400%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0.7;
+    transform: translateX(400%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-400%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideToTop {
+  from {
+    top: 0;
+    opacity: 1;
+  }
+  to {
+    top: -100vh;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* ==================== ANIMATIONS D'ENTRÉE (Page accueil avec intro) ==================== */
+
+/* Animation du titre "AUZENET" */
+.start-anim {
+  position: absolute;
+  animation: slideToTop 1s ease-in-out 2.5s forwards;
+}
+
+.animated-title span {
+  opacity: 0;
+  animation: typing 0.3s forwards;
+}
+
+.animated-title span:nth-child(1) { animation-delay: 0.1s; }
+.animated-title span:nth-child(2) { animation-delay: 0.4s; }
+.animated-title span:nth-child(3) { animation-delay: 0.7s; }
+.animated-title span:nth-child(4) { animation-delay: 1s; }
+.animated-title span:nth-child(5) { animation-delay: 1.3s; }
+.animated-title span:nth-child(6) { animation-delay: 1.6s; }
+.animated-title span:nth-child(7) { animation-delay: 1.9s; }
+
+/* Animation navbar */
+.page-home .nav-left {
+  opacity: 0;
+  animation: slideInFromLeft 2.5s ease-in-out 3s forwards;
+}
+
+.page-home .nav-right {
+  opacity: 0;
+  animation: slideInFromRight 2.5s ease-in-out 3s forwards;
+}
+
+/* Animation section job */
+.job-anim {
+  opacity: 0;
+  animation: slideInFromTop 2.5s ease-in-out 3s forwards;
+}
+
+/* Animation section domaine (typing) */
+.domaine-anim {
+  opacity: 0;
+  animation: slideInFromBottom 2.5s ease-in-out 1.8s forwards;
+}
+
+/* Animation projets */
+.projects {
+  opacity: 0;
+  animation: slideInFromBottom 2.5s ease-in-out 3s forwards;
+}
+
+.projects-right {
+  opacity: 0;
+  animation: slideInFromBottom 2.5s ease-in-out 3s forwards;
+}
+
+/* Animation div3 et div4 */
+.page-home .div3,
+.page-home .div4 {
+  opacity: 0;
+  animation: fadeIn 2s ease-out 5s forwards;
+}
+
+/* Animation footer */
+.reste-fade {
+  opacity: 0;
+  animation: fadeIn 2s ease-out 5s forwards;
+}
+
+/* ==================== PAGE RETOUR (sans intro) ==================== */
+/* Ces styles désactivent les animations pour la page retour */
+
+.page-home.no-intro .start-anim {
+  display: none;
+}
+
+.page-home.no-intro .nav-left,
+.page-home.no-intro .nav-right,
+.page-home.no-intro .job-anim,
+.page-home.no-intro .domaine-anim,
+.page-home.no-intro .projects,
+.page-home.no-intro .projects-right,
+.page-home.no-intro .div3,
+.page-home.no-intro .div4,
+.page-home.no-intro .reste-fade {
+  opacity: 1;
+  animation: none;
+}

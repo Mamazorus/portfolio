@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Maël Auzenet</title>
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+  
+  <!-- CSS Modules -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body class="page-home">
+
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="#home" class="sans-bar">
+          <img id="star" class="star" src="./img/star.svg" alt="Étoile" width="20" height="24">
+        </a>
+        <a href="#home" class="name">MAËL AUZENET</a>
+      </div>
+      <div class="nav-right">
+        <a href="#gallery">GALERIE</a>
+        <a href="#section-footer">CONTACT</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Animation d'intro -->
+  <div class="start-anim">
+    <div class="big-title">
+      <h1 class="animated-title">
+        <span>A</span><span>U</span><span>Z</span><span>E</span><span>N</span><span>E</span><span>T</span>
+      </h1>
+    </div>
+  </div>
+
+  <!-- Section Hero -->
+  <div class="job-anim">
+    <section class="hero" id="home">
+      <div class="job">
+        <div class="blinking-dot"></div>
+        <p>DISPONIBLE POUR UNE ALTERNANCE</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Section Domaine -->
+  <div class="domaine-anim">
+    <section class="domaine">
+      <h1 class="typing-effect"></h1>
+    </section>
+  </div>
+
+  <!-- Section Projets -->
+  <section class="projet" id="gallery">
+    <div class="parent">
+      <div class="projects">
+        <a class="theme" href="graphisme.html">
+          <div class="div1"></div>
+        </a>
+      </div>
+      <div class="projects-right">
+        <a class="theme" href="urban.html">
+          <div class="div2"></div>
+        </a>
+      </div>
+      <a class="theme" href="basteleur.html">
+        <div class="div3"></div>
+      </a>
+      <a class="theme" href="masques.html">
+        <div class="div4"></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="reste-fade">
+    <footer id="section-footer" class="footer">
+      <hr>
+
+      <div class="footer-flex">
+        <div>
+          <p class="footer-title">Support</p>
+          <p class="footer-paragraphe">Portfolio</p>
+        </div>
+
+        <div>
+          <p class="footer-title">Professions</p>
+          <p>Graphiste</p>
+          <p>Webdesigner</p>
+        </div>
+
+        <div>
+          <p class="footer-title">Mise à jour</p>
+          <p>2025</p>
+        </div>
+
+        <div>
+          <p class="footer-title">Designer</p>
+          <p>Maël Auzenet</p>
+        </div>
+
+        <div>
+          <p class="footer-title">Contact</p>
+          <a href="mailto:mauzenet@gmail.com" class="email-link">mauzenet@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="social-media">
+        <a target="_blank" href="https://github.com/Mamazorus" class="git" aria-label="GitHub" rel="noopener noreferrer">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a target="_blank" href="https://www.linkedin.com/in/ma%C3%ABl-auzenet-41b58830b/" class="linkedin" aria-label="LinkedIn" rel="noopener noreferrer">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a target="_blank" href="https://www.instagram.com/azt.mam/" class="insta" aria-label="Instagram" rel="noopener noreferrer">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+
+      <div class="footer-lastline">
+        <p>Copyright
+          <a target="_blank" href="index.html">©Maël Auzenet</a> All rights reserved
+        </p>
+        <div class="button-flex">
+          <a href="#home" class="back-to-top">
+            <img class="star-footer" src="./img/star.svg" alt="Retour en haut" width="20" height="24">
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Force le défilement vers le haut de la page au chargement
+    window.onload = function() {
+      window.scrollTo(0, 0);
+    };
+
+    // Force le défilement vers le haut de la page avant le rechargement
+    window.onbeforeunload = function() {
+      window.scrollTo(0, 0);
+    };
+  </script>
+  <script src="https://kit.fontawesome.com/3b3604d1b9.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lenis@1.1.21/dist/lenis.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

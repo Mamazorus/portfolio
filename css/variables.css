@@ -1,0 +1,130 @@
+/* ============================================
+   VARIABLES CSS - Portfolio Maël Auzenet
+   ============================================
+   Ce fichier centralise toutes les variables.
+   Modifiez ici pour changer l'apparence globale.
+============================================ */
+
+:root {
+  /* ==================== COULEURS ==================== */
+  
+  /* Couleurs de base */
+  --color-bg-primary: #101010;
+  --color-bg-secondary: #060606;
+  --color-bg-dark: #080c13;
+  
+  /* Couleurs de texte */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.615);
+  --color-text-muted: #a3a1a1;
+  --color-text-faded: #ffffff54;
+  
+  /* Couleurs d'accent */
+  --color-border: #5c5c5c;
+  --color-border-light: #ffffff6c;
+  
+  /* Couleurs des réseaux sociaux */
+  --color-linkedin: #0A66C3;
+  --color-social-hover: rgb(157, 157, 157);
+  
+  /* ==================== GRADIENTS DE FOND ==================== */
+  
+  /* Page d'accueil */
+  --gradient-home: linear-gradient(30deg, #080c13, #101010);
+  
+  /* Pages projet */
+  --gradient-default: linear-gradient(30deg, #1b1a1a, #060606);
+  --gradient-graphisme: linear-gradient(30deg, #11121c, #060606);
+  --gradient-urban: linear-gradient(30deg, #1b111c, #060606);
+  --gradient-basteleur: linear-gradient(30deg, #1c1111, #060606);
+  --gradient-masque: linear-gradient(30deg, #181001, #060606);
+  
+  /* Gradient texte typing */
+  --gradient-typing: linear-gradient(20deg, #181721, #ffffff);
+  
+  /* ==================== TYPOGRAPHIE ==================== */
+  
+  --font-heading: 'IntegralCF-Bold', sans-serif;
+  --font-body: 'inter-light', sans-serif;
+  --font-body-extralight: 'inter-extralight', sans-serif;
+  --font-body-extrabold: 'inter-extrabold', sans-serif;
+  
+  /* Tailles de police */
+  --font-size-xs: 16px;
+  --font-size-sm: 18px;
+  --font-size-md: 20px;
+  --font-size-lg: 26px;
+  --font-size-xl: 30px;
+  
+  /* Tailles responsives (vw) */
+  --font-size-hero: 2.5vw;
+  --font-size-typing: 8vw;
+  --font-size-title-big: 9vw;
+  
+  /* ==================== ESPACEMENTS ==================== */
+  
+  --spacing-xs: 10px;
+  --spacing-sm: 20px;
+  --spacing-md: 40px;
+  --spacing-lg: 80px;
+  --spacing-xl: 100px;
+  
+  /* Padding de page */
+  --page-padding: 40px;
+  --page-padding-tablet: 20px;
+  --page-padding-mobile: 10px;
+  
+  /* ==================== TRANSITIONS ==================== */
+  
+  --transition-fast: 0.3s ease-in-out;
+  --transition-medium: 0.5s ease-in-out;
+  --transition-slow: 1s ease-in-out;
+  
+  /* ==================== RAYONS DE BORDURE ==================== */
+  
+  --border-radius-sm: 5px;
+  --border-radius-md: 30px;
+  --border-radius-lg: 200px;
+  --border-radius-full: 300px;
+  
+  /* Alias pour compatibilité */
+  --radius-small: var(--border-radius-sm);
+  --radius-medium: var(--border-radius-md);
+  --radius-round: var(--border-radius-lg);
+  --radius-full: var(--border-radius-full);
+  
+  /* ==================== OMBRES ==================== */
+  
+  --shadow-sm: 1px 1px 4px #00000028;
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 1px 2px 10px rgba(255, 255, 255, 0.2);
+  
+  /* Alias pour compatibilité */
+  --shadow-light: var(--shadow-glow);
+  --shadow-dark: var(--shadow-md);
+  --shadow-card: var(--shadow-sm);
+  
+  /* ==================== COULEURS ADDITIONNELLES ==================== */
+  
+  --color-text-gray: #a3a1a1;
+  
+  /* ==================== Z-INDEX ==================== */
+  
+  --z-background: -3;
+  --z-background-overlay: -2;
+  --z-grain: -1;
+  --z-content: 1;
+  --z-navbar: 1000;
+  --z-mobile-menu: 90000;
+  --z-intro: 10000000;
+}
+
+/* ==================== MEDIA QUERIES VARIABLES ==================== */
+
+@media (max-width: 850px) {
+  :root {
+    --font-size-typing: 11vw;
+    --font-size-hero: 4vw;
+  }
+}

@@ -1,0 +1,179 @@
+/* ============================================
+   COMPONENTS CSS - Éléments réutilisables
+   ============================================ */
+
+/* ==================== TAGS ==================== */
+
+.tag {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: var(--spacing-sm);
+  gap: 0;
+}
+
+.tag a {
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-xs) var(--spacing-xs);
+  border-radius: var(--radius-round);
+  font-size: var(--font-size-xs);
+  text-decoration: none;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  transition: all var(--transition-fast);
+  display: inline-block;
+  cursor: default;
+}
+
+.tag a:hover {
+  background-color: var(--color-text-primary);
+  color: var(--color-bg-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  box-shadow: var(--shadow-light);
+}
+
+.first-tag {
+  margin-right: var(--spacing-sm);
+}
+
+/* ==================== TAG BOTTOM (outil utilisé) ==================== */
+
+.tag-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  gap: 0;
+}
+
+.tag-bottom a {
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-xs) 15px;
+  border-radius: var(--radius-round);
+  font-size: var(--font-size-xs);
+  text-decoration: none;
+  color: var(--color-bg-primary);
+  background-color: var(--color-text-primary);
+  font-family: var(--font-body);
+  transition: all var(--transition-fast);
+  display: inline-block;
+}
+
+.tag-bottom a:hover {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  box-shadow: 1px 2px 10px var(--color-bg-primary);
+}
+
+.tag-bottom p {
+  border: none;
+  padding: var(--spacing-xs) 15px;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  margin: 0;
+}
+
+/* ==================== TAG BOTTOM 2 (lien externe) ==================== */
+
+.tag-bottom2 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: var(--spacing-sm);
+  gap: 0;
+}
+
+.tag-bottom2 a {
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-xs) 15px;
+  border-radius: var(--radius-round);
+  font-size: var(--font-size-xs);
+  text-decoration: none;
+  color: var(--color-bg-primary);
+  background-color: var(--color-text-primary);
+  font-family: var(--font-body);
+  transition: all var(--transition-fast);
+  display: inline-block;
+}
+
+.tag-bottom2 a:hover {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  box-shadow: none;
+}
+
+.tag-bottom2 p {
+  border: none;
+}
+
+/* ==================== BLINKING DOT ==================== */
+
+.blinking-dot {
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-text-primary);
+  border-radius: 50%;
+  animation: blink 2s infinite;
+  scale: 1.2;
+}
+
+/* Cercle animé derrière */
+.blinking-dot::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-text-primary);
+  border-radius: 50%;
+  opacity: 0.5;
+  transform: translate(-50%, -50%) scale(0.5);
+  animation: pulse 2s infinite;
+}
+
+/* Animation de pulsation */
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.2;
+  }
+}
+
+/* ==================== RESPONSIVE COMPONENTS ==================== */
+
+@media (max-width: 850px) {
+  .tag {
+    padding: 0 var(--spacing-md);
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-md);
+  }
+
+  .tag a {
+    font-size: var(--font-size-sm);
+    border-radius: var(--radius-medium);
+  }
+
+  .tag-bottom2 {
+    margin-top: var(--spacing-sm);
+    margin-left: var(--spacing-md);
+  }
+}
+
+@media (max-width: 642px) {
+  .tag-bottom2 {
+    margin-top: var(--spacing-sm);
+    margin-left: var(--spacing-md);
+  }
+}

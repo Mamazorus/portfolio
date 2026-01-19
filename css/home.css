@@ -1,0 +1,98 @@
+/* ============================================
+   HOME CSS - Styles page d'accueil
+   ============================================ */
+
+/* ==================== INTRO ANIMATION (Big Title) ==================== */
+
+.big-title {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-title-big);
+  font-family: var(--font-body-extrabold);
+  color: var(--color-text-primary);
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  z-index: var(--z-intro);
+  opacity: 1;
+}
+
+/* ==================== HERO SECTION ==================== */
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  text-align: center;
+  position: relative;
+}
+
+/* ==================== JOB SECTION ==================== */
+
+.job {
+  position: relative;
+  margin-top: 200px;
+}
+
+.job p {
+  margin: 0;
+  font-family: var(--font-body-extralight);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-hero);
+}
+
+/* ==================== DOMAINE SECTION ==================== */
+
+.domaine {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* ==================== TYPING EFFECT ==================== */
+
+/* Animation de clignotement du curseur */
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+.typing-effect {
+  font-family: var(--font-body-extrabold);
+  background: var(--gradient-typing);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: var(--font-size-typing);
+  border-right: 2px solid;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--color-text-primary);
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+/* ==================== BODY OVERFLOW (intro animation) ==================== */
+
+.page-home:not(.no-intro) body {
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 850px) {
+  .typing-effect {
+    font-size: var(--font-size-typing);
+  }
+
+  .job p {
+    font-size: var(--font-size-hero);
+  }
+}

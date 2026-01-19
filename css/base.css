@@ -1,0 +1,81 @@
+/* ============================================
+   BASE CSS - Reset, Fonts & Styles globaux
+   ============================================ */
+
+/* ==================== POLICES ==================== */
+
+@font-face {
+  font-family: 'IntegralCF-Bold';
+  src: url('../fonts/IntegralCF-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'inter-light';
+  src: url('../fonts/Inter_18pt-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'inter-extralight';
+  src: url('../fonts/Inter_18pt-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'inter-extrabold';
+  src: url('../fonts/Inter_18pt-ExtraBold.ttf') format('truetype');
+}
+
+/* ==================== RESET ==================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==================== SÉLECTION ==================== */
+
+::selection {
+  background: var(--color-text-primary);
+  color: var(--color-bg-primary);
+}
+
+/* ==================== BODY ==================== */
+
+body {
+  background: var(--color-bg-primary);
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+/* Page d'accueil */
+body.page-home {
+  background: var(--gradient-home);
+}
+
+/* Pages projet - fond par défaut */
+body.page-project {
+  background: var(--gradient-default);
+}
+
+/* Désactiver le scroll (menu mobile) */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* ==================== MAIN ==================== */
+
+main {
+  padding-top: 60px;
+}
+
+/* ==================== HR ==================== */
+
+hr {
+  margin-top: var(--spacing-lg);
+  border-color: var(--color-border-light);
+  height: 1px;
+}

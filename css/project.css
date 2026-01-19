@@ -1,0 +1,164 @@
+/* ============================================
+   PROJECT CSS - Styles pages projet
+   ============================================ */
+
+/* ==================== BACKGROUNDS PAR PROJET ==================== */
+
+.bg-graphisme {
+  background: var(--color-bg-primary);
+  margin: 0;
+  background: var(--gradient-graphisme);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.bg-urban {
+  background: var(--color-bg-primary);
+  margin: 0;
+  background: var(--gradient-urban);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.bg-basteleur {
+  background: var(--color-bg-primary);
+  margin: 0;
+  background: var(--gradient-basteleur);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.bg-masque {
+  background: var(--color-bg-primary);
+  margin: 0;
+  background: var(--gradient-masque);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+/* ==================== CAROUSEL (si utilisé) ==================== */
+
+.container {
+  width: 100%;
+  padding: var(--spacing-md) 0 0 0;
+  text-align: center;
+}
+
+.container-bg {
+  margin-top: var(--spacing-md);
+  height: var(--spacing-md);
+  background-color: var(--color-bg-secondary);
+}
+
+.carousel-container {
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-infinite 30s linear infinite;
+  gap: var(--spacing-xs);
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.logo-item {
+  opacity: 0;
+  font-family: var(--font-body-extralight);
+  color: rgb(249, 252, 255);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xs) 0;
+  transition: transform var(--transition-fast), filter var(--transition-fast), opacity 0.4s ease;
+}
+
+.logo-item:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.logo-item img {
+  width: 100px;
+  height: 12px;
+  object-fit: contain;
+  border-radius: 0;
+  transition: all var(--transition-fast);
+}
+
+.logo-item:hover img {
+  filter: brightness(1.3) saturate(1.2);
+}
+
+/* Animation carousel */
+@keyframes scroll-infinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1920px);
+  }
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+/* ==================== RESPONSIVE CAROUSEL ==================== */
+
+@media (max-width: 768px) {
+  .carousel-container {
+    padding: var(--spacing-sm) 0;
+  }
+
+  .carousel-track {
+    gap: 8px;
+    animation-duration: 45s;
+  }
+
+  .logo-item {
+    padding: 8px 0;
+  }
+
+  .logo-item img {
+    width: 80px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0;
+  }
+
+  .carousel-track {
+    gap: 6px;
+    animation-duration: 35s;
+  }
+
+  .logo-item {
+    padding: 6px 0;
+  }
+
+  .logo-item img {
+    width: 60px;
+    height: 7px;
+  }
+}

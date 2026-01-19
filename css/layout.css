@@ -1,0 +1,379 @@
+/* ============================================
+   LAYOUT CSS - Layouts principaux
+   ============================================ */
+
+/* ==================== STICKY LAYOUT (Pages projet) ==================== */
+
+.sticky-layout {
+  color: var(--color-text-primary);
+  display: flex;
+  max-width: 100%;
+  padding: 0 var(--page-padding);
+  gap: var(--page-padding);
+}
+
+.sticky-layout h2 {
+  padding-top: 90px;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-body);
+}
+
+.sticky-layout p {
+  margin-top: var(--spacing-sm);
+  font-size: var(--font-size-md);
+  font-family: var(--font-body-extralight);
+  color: var(--color-text-muted);
+}
+
+/* Colonne gauche sticky */
+.sticky-left {
+  flex: 1;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+}
+
+.bottom-sticky {
+  margin-top: auto;
+  color: var(--color-text-primary);
+}
+
+/* Style pour le paragraphe direct, mais pas ceux dans .tag-bottom */
+.bottom-sticky > p {
+  font-family: var(--font-body);
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-primary);
+  margin-right: 10vw;
+  text-decoration: none;
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-xs);
+  text-underline-offset: 2px;
+}
+
+/* Supprimer la bordure sur les p dans tag-bottom */
+.bottom-sticky .tag-bottom p,
+.bottom-sticky .tag-bottom2 p {
+  border: none;
+  margin-right: 0;
+  padding: 0;
+}
+
+h3 {
+  margin-top: var(--spacing-md);
+  font-family: var(--font-body-extralight);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-primary);
+}
+
+.propos-projet p {
+  font-size: var(--font-size-xs);
+  line-height: 1.2;
+  word-spacing: 1px;
+  letter-spacing: 1.2px;
+}
+
+/* Colonne droite scrollable (images) */
+.scroll-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--spacing-xs);
+}
+
+.first-img {
+  margin-top: 90px;
+}
+
+.scroll-right img {
+  width: 50vw;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0;
+  align-self: flex-end;
+}
+
+/* ==================== GRILLE DE PROJETS (Page accueil) ==================== */
+
+.projet {
+  margin-top: var(--spacing-md);
+  margin-left: var(--page-padding);
+  margin-right: var(--page-padding);
+}
+
+.projet h2 {
+  display: inline-block;
+  color: var(--color-text-primary);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-full);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-body-extralight);
+  margin: var(--spacing-sm);
+  transition: all var(--transition-fast);
+  filter: blur(0px);
+  box-shadow: var(--shadow-card);
+}
+
+.theme h2:hover {
+  padding: var(--spacing-xs) var(--spacing-xl);
+}
+
+/* Grille 2x2 */
+.parent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: var(--spacing-sm);
+  grid-row-gap: var(--spacing-sm);
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 2 / 1 / 3 / 2; }
+.div4 { grid-area: 2 / 2 / 3 / 3; }
+
+.div1,
+.div2,
+.div3,
+.div4 {
+  position: relative;
+  overflow: hidden;
+  height: 55vh;
+  border-radius: var(--radius-medium);
+  transition: all var(--transition-fast);
+}
+
+.div1:hover,
+.div2:hover,
+.div3:hover,
+.div4:hover {
+  scale: 1.02;
+}
+
+.div1 h2,
+.div2 h2,
+.div3 h2,
+.div4 h2 {
+  position: relative;
+}
+
+/* Images de fond des projets */
+.div1::before { background: url('../img/affiche_visuel2.jpg'); }
+.div2::before { background: url('../img/Urban_visuel.jpg'); }
+.div3::before { background: url('../img/Basteleur_visuel.jpg'); }
+.div4::before { background: url('../img/Masques_visuel3.jpg'); }
+
+.div1::before,
+.div2::before,
+.div3::before,
+.div4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  transition: transform var(--transition-medium);
+}
+
+.div1:hover::before,
+.div2:hover::before,
+.div3:hover::before,
+.div4:hover::before {
+  transform: scale(1.1);
+}
+
+/* ==================== RESPONSIVE DESKTOP (>1200px) ==================== */
+
+@media (min-width: 1200px) {
+  .sticky-layout {
+    gap: var(--spacing-xl);
+  }
+  
+  .sticky-left {
+    flex: 0 0 35vw;
+    max-width: 35vw;
+  }
+
+  .scroll-right {
+    width: 70vw;
+    align-items: flex-end;
+    gap: var(--spacing-sm);
+  }
+
+  .scroll-right img {
+    width: 100%;
+    max-width: none;
+    align-self: flex-end;
+  }
+  
+  .bottom-sticky p {
+    margin-right: var(--spacing-sm);
+  }
+}
+
+/* ==================== RESPONSIVE TABLET (≤1100px) ==================== */
+
+@media (max-width: 1100px) {
+  .div1,
+  .div2,
+  .div3,
+  .div4 {
+    height: 50vh;
+  }
+}
+
+/* ==================== RESPONSIVE TABLET (≤911px) ==================== */
+
+@media (max-width: 911px) {
+  .parent {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: var(--spacing-sm);
+    grid-row-gap: var(--spacing-sm);
+  }
+
+  .div1 { grid-area: 1 / 1 / 2 / 2; }
+  .div2 { grid-area: 2 / 1 / 3 / 2; }
+  .div3 { grid-area: 3 / 1 / 4 / 2; }
+  .div4 { grid-area: 4 / 1 / 5 / 2; }
+
+  .div1,
+  .div2,
+  .div3,
+  .div4 {
+    height: 70vh;
+  }
+
+  .projet {
+    margin-left: var(--page-padding-tablet);
+    margin-right: var(--page-padding-tablet);
+  }
+}
+
+/* ==================== RESPONSIVE TABLET (≤850px) ==================== */
+
+@media (max-width: 850px) {
+  /* Suppression du sticky pour mobile */
+  .sticky-left {
+    position: static;
+    height: auto;
+    margin-left: calc(-1 * var(--page-padding));
+    padding: 0 var(--page-padding-tablet);
+  }
+
+  .sticky-layout {
+    flex-direction: column;
+    padding: 0 var(--page-padding-tablet);
+    gap: var(--spacing-sm);
+  }
+
+  .sticky-layout h2 {
+    padding: 0 var(--page-padding);
+    font-size: var(--font-size-lg);
+    padding-top: var(--spacing-lg);
+  }
+
+  .sticky-layout p {
+    margin-top: var(--spacing-sm);
+    padding: 0 var(--page-padding);
+  }
+
+  .scroll-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  .scroll-right img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: var(--shadow-dark);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h3 {
+    padding: 0 var(--page-padding);
+  }
+
+  .bottom-sticky {
+    margin-top: var(--spacing-md);
+  }
+}
+
+/* ==================== RESPONSIVE MOBILE (≤642px) ==================== */
+
+@media (max-width: 642px) {
+  .sticky-left {
+    position: static;
+    height: auto;
+    margin-left: calc(-1 * var(--page-padding));
+  }
+
+  .sticky-layout {
+    flex-direction: column;
+    padding: 0 var(--page-padding-mobile);
+    gap: var(--spacing-sm);
+  }
+
+  .sticky-layout h2 {
+    padding: 0 var(--page-padding);
+    font-size: var(--font-size-lg);
+    padding-top: var(--spacing-lg);
+  }
+
+  .sticky-layout p {
+    margin-top: var(--spacing-sm);
+    padding: 0 var(--page-padding);
+  }
+
+  .scroll-right {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .scroll-right img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: var(--shadow-dark);
+  }
+
+  h3 {
+    padding: 0 var(--page-padding);
+  }
+
+  .bottom-sticky {
+    margin-top: var(--spacing-md);
+  }
+
+  .div1,
+  .div2,
+  .div3,
+  .div4 {
+    height: 50vh;
+  }
+
+  .projet {
+    margin-left: var(--page-padding-mobile);
+    margin-right: var(--page-padding-mobile);
+  }
+}
